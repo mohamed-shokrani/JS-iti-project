@@ -294,3 +294,13 @@ footer a li {
         display: flex;
     }
 }
+#removeall{
+    background-color: rgb(120, 8, 8);
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 10px;
+}
+#removeall:hover{
+    background-color: #000;
+    
+}
