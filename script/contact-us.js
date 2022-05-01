@@ -17,14 +17,14 @@ if (all['isLogin'] == "true") {
     document.getElementById('signupp').style.display = 'none'
     document.getElementById('us_name').style.display = 'block'
     document.getElementById('logout').style.display = 'block'
-    document.getElementById('i_cart').style.display = 'block'
+
     document.getElementById('a_name').innerHTML = all['fname']
 } else {
     document.getElementById('log').style.display = 'block'
     document.getElementById('signupp').style.display = 'block'
     document.getElementById('us_name').style.display = 'none'
     document.getElementById('logout').style.display = 'none'
-    document.getElementById('i_cart').style.display = 'none'
+    document.getElementById('lblCartCount').style.display = 'none'
 }
 document.getElementById('log1').onclick = function() {
 

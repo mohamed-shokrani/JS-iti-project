@@ -63,7 +63,7 @@ if (i > 0) {
 
 }
 
-document.getElementById('cart').innerHTML += '<div class="back-to-shop"><a href="index.html"">&leftarrow;</a><span class="text-muted">Back to shop</span></div>    <input style="float: left;  " type="button" class="btn btn-danger" onclick="removeallItmes()" value="Empty card" name="" id="removeall" >' 
+document.getElementById('cart').innerHTML += '<div class="back-to-shop"><a href="index.html"">&leftarrow;</a><span class="text-muted">Back to shop</span></div>    <input style="float: left;  " type="button" class="btn btn-danger" onclick="removeallItmes()" value="Empty card" name="" id="removeall" >'
     //function when minus count one of items
 function minus(th, id) {
     var cart = JSON.parse(localStorage.getItem(id))
@@ -123,28 +123,26 @@ document.getElementById('total').innerHTML = ' $ ' + (res + 7 - Math.round(dis))
 
 
 
-function removeallItmes(){
+function removeallItmes() {
     document.getElementById("removeall").onclick = window.localStorage.clear()
     location.reload();
 }
-if(document.getElementById('total').innerText ==  '$ 7' ){
+if (document.getElementById('total').innerText == '$ 7') {
     document.getElementById('t_s_price').innerHTML = "0"
     document.getElementById('total').innerHTML = "0"
 
-}else{
-    console.log("oh")
 }
 var mmmm = document.getElementById('total').innerHTML
 console.log(typeof mmmm)
-if(document.getElementById('total').innerText == '0'){
-//   var checkout=  document.getElementById("checkout");
-document.getElementById("checkout").disabled = true;
+if (document.getElementById('total').innerText == '0') {
+    //   var checkout=  document.getElementById("checkout");
+    document.getElementById("checkout").disabled = true;
 
-//   checkout.style.display ="none";
-//   var emptyWhenZeroItem = document.getElementById("removeall");
-//   checkout.style.display ="none"
-//   emptyWhenZeroItem.style.display ="none"
-  document.getElementById("removeall").disabled = true;
+    //   checkout.style.display ="none";
+    //   var emptyWhenZeroItem = document.getElementById("removeall");
+    //   checkout.style.display ="none"
+    //   emptyWhenZeroItem.style.display ="none"
+    document.getElementById("removeall").disabled = true;
 
 }
 // if(localStorage == ""){

@@ -44,11 +44,13 @@ var x = {
 document.getElementById('NameOnCard').onblur = function() {
 
     t1 = regex_name.test(document.getElementById('NameOnCard').value);
-    console.log(t1)
+
     if (t1 == true && document.getElementById('NameOnCard').value != '') {
+
         document.getElementById('NameOnCard').style.border = '2px solid rgb(43, 209, 140)'
         document.getElementById('p_name').innerHTML = ''
     } else {
+        t1 = false;
         document.getElementById('NameOnCard').style.border = '2px solid red'
         document.getElementById('p_name').innerHTML = ' Name on Card not vaild'
     }
@@ -56,7 +58,7 @@ document.getElementById('NameOnCard').onblur = function() {
 }
 document.getElementById('visa').onclick = function() {
     document.getElementById('CardNumber').removeAttribute('readonly');
-    document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+    document.getElementById('CardNumber').style.border = 'none'
     document.getElementById('p_number').innerHTML = ''
     document.getElementById('mastercard').style.fontSize = '40px'
     document.getElementById('amex').style.fontSize = '40px'
@@ -72,7 +74,7 @@ document.getElementById('visa').onclick = function() {
 };
 document.getElementById('mastercard').onclick = function() {
     document.getElementById('CardNumber').removeAttribute('readonly');
-    document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+    document.getElementById('CardNumber').style.border = 'none'
     document.getElementById('p_number').innerHTML = ''
     document.getElementById('visa').style.fontSize = '40px'
     document.getElementById('amex').style.fontSize = '40px'
@@ -86,7 +88,7 @@ document.getElementById('mastercard').onclick = function() {
 };
 document.getElementById('amex').onclick = function() {
     document.getElementById('CardNumber').removeAttribute('readonly');
-    document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+    document.getElementById('CardNumber').style.border = 'nne'
     document.getElementById('p_number').innerHTML = ''
     document.getElementById('visa').style.fontSize = '40px'
     document.getElementById('amex').style.fontSize = '50px'
@@ -100,7 +102,7 @@ document.getElementById('amex').onclick = function() {
 };
 document.getElementById('discover').onclick = function() {
     document.getElementById('CardNumber').removeAttribute('readonly');
-    document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+    document.getElementById('CardNumber').style.border = 'none'
     document.getElementById('p_number').innerHTML = ''
     document.getElementById('visa').style.fontSize = '40px'
     document.getElementById('amex').style.fontSize = '40px'
@@ -128,28 +130,47 @@ document.getElementById('CardNumber').onfocus = function(event) {
 document.getElementById('CardNumber').onblur = function(event) {
 
     if (x['card'] != false) {
-        alert('aya')
-
-        if (x['card'] == true) {
-
-            var reg = Object.values(x)
-            var key = Object.keys(x)[0]
-            t2 = reg[0].test(document.getElementById('CardNumber').value);
-            console.log(t2)
 
 
-            if (t2 == true && key != 'discover') {
-                var v = document.getElementById('CardNumber').value;
+
+        var reg = Object.values(x)
+        var key = Object.keys(x)[0]
+
+        t2 = reg[0].test(document.getElementById('CardNumber').value);
+        console.log(t2)
+
+
+        if (t2 == true && key != 'discover') {
+            var v = document.getElementById('CardNumber').value;
+            if (!scode)
                 scode = Number(v.substring(v.length - 3, v.length));
-            }
-            if (t2 == true) {
-                document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
-                document.getElementById('p_number').innerHTML = ''
-            } else {
-                document.getElementById('CardNumber').style.border = '2px solid red'
-                document.getElementById('p_number').innerHTML = 'Card ' + key + ' Number not vaild'
+            else {
+                scode = Number(v.substring(v.length - 3, v.length));
+
+                var key = Object.keys(x)[0]
+                if (key != 'discover') {
+
+                    t4 = regex_securitcod.test(document.getElementById('SecurityCode').value);
+                    if (t4 == true && Number(document.getElementById('SecurityCode').value) == scode) {
+                        document.getElementById('SecurityCode').style.border = '2px solid rgb(43, 209, 140)'
+                        document.getElementById('p_security').innerHTML = ''
+                    } else {
+                        t4 = false;
+                        document.getElementById('SecurityCode').style.border = '2px solid red'
+                        document.getElementById('p_security').innerHTML = ' Security code not vaild'
+                    }
+                }
+
             }
         }
+        if (t2 == true) {
+            document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+            document.getElementById('p_number').innerHTML = ''
+        } else {
+            document.getElementById('CardNumber').style.border = '2px solid red'
+            document.getElementById('p_number').innerHTML = 'Card ' + key + ' Number not vaild'
+        }
+
 
     }
 }
@@ -182,13 +203,16 @@ document.getElementById('SecurityCode').onblur = function() {
             document.getElementById('SecurityCode').style.border = '2px solid rgb(43, 209, 140)'
             document.getElementById('p_security').innerHTML = ''
         } else {
+            t4 = false;
             document.getElementById('SecurityCode').style.border = '2px solid red'
             document.getElementById('p_security').innerHTML = ' Security code not vaild'
         }
     }
 }
 document.getElementById('pay').onclick = function() {
+
     if (t1 == true && t2 == true && t3 == true && t4 == true) {
+
         localStorage.clear();
         location.assign('cart.html')
     } else {

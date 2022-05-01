@@ -21,7 +21,7 @@ function myFunction() {
     }
 }
 //display the date in div
-import { deleteCookie, setCookie, getCookie } from './Cookie.js';
+
 
 var c = document.cookie;
 
@@ -39,23 +39,23 @@ if (all['isLogin'] == "true") {
     document.getElementById('signupp').style.display = 'none'
     document.getElementById('us_name').style.display = 'block'
     document.getElementById('logout').style.display = 'block'
-    document.getElementById('i_cart').style.display = 'block'
+
     document.getElementById('a_name').innerHTML = all['fname']
 } else {
     document.getElementById('log').style.display = 'block'
     document.getElementById('signupp').style.display = 'block'
     document.getElementById('us_name').style.display = 'none'
     document.getElementById('logout').style.display = 'none'
-    document.getElementById('i_cart').style.display = 'none'
+    document.getElementById('lblCartCount').style.display = 'none'
 }
 document.getElementById('log1').onclick = function() {
 
     var date = new Date();
     date.setDate(date.getDate() + 10);
 
+    document.cookie = "isLogin='false';expires=" + date.toUTCString();
 
-    setCookie("isLogin", 'false', date);
-    location.replace('login.html')
+    location.replace("Login.html")
 
 }
 document.getElementById('ab').classList.add('active')

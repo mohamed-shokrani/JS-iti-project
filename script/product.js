@@ -1,14 +1,13 @@
-import { deleteCookie, setCookie, getCookie } from './Cookie.js';
-
 var c = document.cookie;
 
 var allcook = c.split('; ')
+
 
 var all = {};
 for (let item of allcook) {
     var fn = item.split('=')
     all[fn[0]] = fn[1];
-    console.log(fn)
+
 }
 
 
@@ -31,8 +30,9 @@ document.getElementById('log1').onclick = function() {
     var date = new Date();
     date.setDate(date.getDate() + 10);
 
-    setCookie("isLogin", "false", date);
-    location.replace('login.html')
+    document.cookie = "isLogin='false';expires=" + date.toUTCString();
+
+    location.replace("Login.html")
 
 }
 var opt;
@@ -153,7 +153,7 @@ function display_data(data) {
                     addcart(item.id, item.discountPercentage, item.brand, item.title, item.description, item.price, item.thumbnail)
                     alert(item.title + 'added to Shopping Cart')
                 } else {
-                    location.assign("login.html")
+                    location.replace("login.html")
                 }
             }
         }
@@ -248,5 +248,5 @@ function addcart(id, discountPercentage, brand, title, description, price, image
         var i = keys.length;
         countEl.innerHTML = i;
     }
-    console.log(JSON.parse(localStorage.getItem(id)))
+
 }

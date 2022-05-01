@@ -9,66 +9,66 @@
     <meta name="author" content="Abobakr Mohammed Aboelala">
     <meta name="viewport " content="width=device-width, initial-scale=1.0 ">
     <!--               CSS Files               -->
-    <link rel="stylesheet" href="Css/all.min.css">
-    <link rel="stylesheet" href="Css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="Css/style.min.css">
+    <link rel="stylesheet" href="css22/all.min.css">
+    <link rel="stylesheet" href="css22/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css22/style.min.css">
     <title></title>
 </head>
 
-<body style="background-color: #f1f1f1;">
+<body style="background-color: #f1f1f1; ">
+    <div>
+        <form method="get" action="index.html">
+            <div class="containeer" style="margin-top: 250px;">
+                <legend style="margin: 5px; text-align: center;">
+                    <h1>Register </h1>
+                </legend>
+                <hr>
+                <div class="mb ">
+                    <label class="label-username">First Name</label>
+                    <input type="text" class="form-control " name="fname" id="fname" placeholder="First Name">
+                    <small class="invalid-feedback"></small>
+                </div>
+                <div class="mb">
+                    <label class="label-username">Last Name</label>
+                    <input type="text" class="form-control " name="lname" id="lname" placeholder="Last Name">
+                    <small class="invalid-feedback"></small>
+                </div>
+                <div class="mb">
+                    <label class="label-phone">phone</label>
+                    <input type="text" class="form-control" name="userphone" id="userphone" placeholder="Enter your Phone Number">
+                    <small class="invalid-feedback"></small>
+                </div>
+                <div class="mb">
+                    <label class="label-email">email</label>
+                    <input type="email" class="form-control" name="useremail" id="useremail" placeholder="Enter your Email">
+                    <small class="invalid-feedback"></small>
+                </div>
+                <div class="mb">
+                    <label class="label-password">password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    <small class="invalid-feedback"></small>
+                    <span class="match"></span>
 
-    <form method="get" action="index.html">
-        <div class="containeer">
-            <legend style="margin: 5px; text-align: center;">
-                <h1>Register </h1>
-            </legend>
-            <hr>
-            <div class="mb ">
-                <label class="label-username">First Name</label>
-                <input type="text" class="form-control " name="fname" id="fname" placeholder="First Name">
-                <small class="invalid-feedback"></small>
-            </div>
-            <div class="mb">
-                <label class="label-username">Last Name</label>
-                <input type="text" class="form-control " name="lname" id="lname" placeholder="Last Name">
-                <small class="invalid-feedback"></small>
-            </div>
-            <div class="mb">
-                <label class="label-phone">phone</label>
-                <input type="text" class="form-control" name="userphone" id="userphone" placeholder="Enter your Phone Number">
-                <small class="invalid-feedback"></small>
-            </div>
-            <div class="mb">
-                <label class="label-email">email</label>
-                <input type="email" class="form-control" name="useremail" id="useremail" placeholder="Enter your Email">
-                <small class="invalid-feedback"></small>
-            </div>
-            <div class="mb">
-                <label class="label-password">password</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                <small class="invalid-feedback"></small>
-                <span class="match"></span>
+                </div>
+                <div class="mb">
+                    <label class="label-password">comfirm password</label>
+                    <input type="password" class="form-control" name="repassword" id="repassword" placeholder="Repassword">
+                    <small class="invalid-feedback"></small>
+                    <span id="match"></span>
 
+                </div>
+                <div class="mb">
+                    <label class="label-address">Address</label>
+                    <input type="text" class="form-control" id="Address" name="Address" placeholder="Address" required>
+                </div>
+                <input type="submit" class="submit" onsubmit="validator()" value="Submit" />
+                <div class="mb">
+                    <p>Already have an account? <a href="Login.html">sign in</a>.</p>
+                </div>
             </div>
-            <div class="mb">
-                <label class="label-password">comfirm password</label>
-                <input type="password" class="form-control" name="repassword" id="repassword" placeholder="Repassword">
-                <small class="invalid-feedback"></small>
-                <span id="match"></span>
+        </form>
 
-            </div>
-            <div class="mb">
-                <label class="label-address">Address</label>
-                <input type="text" class="form-control" id="Address" name="Address" placeholder="Address" required>
-            </div>
-            <input type="submit" class="submit" onsubmit="validator()" value="Submit" />
-            <div class="mb">
-                <p>Already have an account? <a href="Login.html">sign in</a>.</p>
-            </div>
-        </div>
-    </form>
-
-
+    </div>
 
     <!--               JS Files               -->
     <script src="javaScript/all.min.js"></script>

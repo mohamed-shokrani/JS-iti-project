@@ -3,7 +3,7 @@
 //user name function
 function fullNameValidate(name) {
 
-    var regx = new RegExp(/^[a-z0-9_-]{3,16}$/);
+    var regx = new RegExp(/^[A-Za-z0-9_-]{3,16}$/);
     if (regx.test(name)) {
 
         return true;
@@ -41,7 +41,7 @@ function phoneValidate(phone) {
 // password function
 function passwordValidate(password) {
 
-    var regx = new RegExp(/^[A-Z][0-9][a-z]{4,10}$/);
+    var regx = new RegExp(/^[A-Z]*[_\-$&\.@]*[a-z]*[0-9]*.{4,10}$/);
     if (regx.test(password)) {
 
         return true;
